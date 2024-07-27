@@ -7,8 +7,10 @@ sigmoid = lambda x: 1 / (1 + np.exp(-x))
 deriv_sigmoid = lambda x: x * (1 - x)
 epoch = 5000
 lr = 0.1
-wh, bh = np.random.uniform(size=(2, 3)), np.random.uniform(size=(1, 3))
-wout, bout = np.random.uniform(size=(3, 1)), np.random.uniform(size=(1, 1))
+wh = np.random.uniform(size=(2, 3))
+bh =np.random.uniform(size=(1, 3))
+wout  = np.random.uniform(size=(3, 1))
+bout = np.random.uniform(size=(1, 1))
 for _ in range(epoch):
     hlayer_act = sigmoid(np.dot(x, wh) + bh)
     output = sigmoid(np.dot(hlayer_act, wout) + bout)
