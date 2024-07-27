@@ -7,7 +7,6 @@ dataset = load_iris()
 X_train,X_test,y_train,y_test=train_test_split(dataset["data"],dataset["target"],random_state=0)
 kn = KNeighborsClassifier(n_neighbors=3)
 kn.fit(X_train,y_train)
-KNeighborsClassifier(n_neighbors=3)
 prediction=kn.predict(X_test)
 confusion_matrix(y_test,prediction)
 
