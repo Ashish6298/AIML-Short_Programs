@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import datasets, svm, metrics, model_selection
 X, y = datasets.load_iris(return_X_y=True)
-X, y = X[y != 2, :2], y[y != 2]
+X = X[y != 2, :2]
+y=y[y != 2]
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2, random_state=42)
 clf = svm.SVC(kernel='linear').fit(X_train, y_train)
 y_pred = clf.predict(X_test)
